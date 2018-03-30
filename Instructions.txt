@@ -1,0 +1,52 @@
+Steps to use python for editing Google Sheets.
+
+1. Must use the new API. To install, go to command prompt and type: python -m pip install --upgrade google-api-python-client
+2. Follow along with this video to Create a new app, and obtain the credentials necessary to use the API:
+    https://www.youtube.com/watch?v=DYAwYxVs2TI&feature=youtu.be&list=PLOU2XLYxmsILOIxBRPPhgYbuSslr50KVq&index=2
+    You will do three things:
+    1. Create a new project
+    2. Turn on the APIs you're going to use for that project
+    3. Create and download the appropriate credentials
+3. Common python code walkthrough video:
+    https://www.youtube.com/watch?v=h-gBeC9Y9cE&feature=youtu.be&list=PLOU2XLYxmsILOIxBRPPhgYbuSslr50KVq&index=3
+4. Google Sheets API documentation: http://goo.gl/0BiEQe
+
+A1 notation used to read specific cells in a sheet (rather than just the whole sheet)
+https://developers.google.com/sheets/api/guides/concepts#a1_notation
+Some API methods require a range in A1 notation. This is a string like Sheet1!A1:B2, that refers to a
+group of cells in the spreadsheet, and is typically used in formulas. For example, valid ranges are:
+
+Sheet1!A1:B2 refers to the first two cells in the top two rows of Sheet1.
+Sheet1!A:A refers to all the cells in the first column of Sheet1.
+Sheet1!1:2 refers to the all the cells in the first two rows of Sheet1.
+Sheet1!A5:A refers to all the cells of the first column of Sheet 1, from row 5 onward.
+A1:B2 refers to the first two cells in the top two rows of the first visible sheet.
+Sheet1 refers to all the cells in Sheet1.
+Named ranges are also supported. When a named range conflicts with a sheet's name, the named range is preferred.
+
+Creating Word Docs (https://automatetheboringstuff.com/chapter13/)
+For word documents, you must install the python module: python-docx. You can install the module by running
+"pip install python-docx"
+
+NOTE: When using pip to first install Python-Docx, be sure to install "python-docx", not "docx".
+ The installation name "docx" is for a different module. However, when you are going to import
+ the "python-docx" module, you’ll need to run "import docx", not "import python-docx".
+
+
+I finally finished the console version of the sheets editor "console_sheets_editor.py"
+
+=============================================================================================================
+Now I want to make a GUI using tkinter.
+
+I think i need Pillow, which is a Python library for for opening, manipulating,
+ and saving many different image file formats.
+
+To use it, it must first be installed: python -m pip install pillow
+
+=======================================================================================================
+So, it looks like I am looking into REST and the ScienceBase API to get, put, post, and delete items there.
+NOTE: need to install: pip install requests
+NOTE: need to install: pip install git+https://my.usgs.gov/stash/scm/sbe/pysb.git
+^ to do this NOTE: I had to install github and Git for Windows, restart computer, then go with: python -m pip install git+https://my.usgs.gov/stash/scm/sbe/pysb.git
+
+I could NOT get it to install before I finally got above to work. 'python -m pip install pysb' also didn't work.
